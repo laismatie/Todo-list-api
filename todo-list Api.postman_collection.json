@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "54d336d7-6f9d-48f0-b34a-ea22511ca5f1",
+		"name": "Todo-list Api",
+		"description": "# Apresentação\n\nDocumentação para utilização da Doc Api – Todo-list.\n\n# Autenticação\n\nNão é preciso utilizar autenticação para fazer requisições a esta API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "Listar Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos"
+							]
+						},
+						"description": "Exibe uma lista com todas as Todo's do sistema\n\n| Atributo | Descrição      | Type    |\n|----------|----------------|---------|\n| id_todo  | ID da todo     | Integer |\n| title    | Título da todo | String  |"
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Laís Todo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/todos/id/?title=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos",
+								"id",
+								""
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": ""
+								}
+							]
+						},
+						"description": "Esta requisição é responsável por editar uma todo"
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Laís Todo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/todos?title=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": ""
+								}
+							]
+						},
+						"description": "Esta requisição é responsável por adicionar uma todo\n\n| Atributo | Descrição      | Tipo   | Required |\n|----------|----------------|--------|----------|\n| title    | Título da todo | String | true     |"
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Laís Todo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/todos/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos",
+								"id"
+							]
+						},
+						"description": "Esta requisição é responsável por excluir uma todo"
+					},
+					"response": []
+				}
+			],
+			"description": "Está pasta representa um objeto do tipo Todo na Doc Api – Todo-list."
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Adicionar Item",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Laís Todo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/todos/id_todo/items?name=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos",
+								"id_todo",
+								"items"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						},
+						"description": "Esta requisição é responsável por adicionar um item dentro de uma todo\n\n| Atributo | Descrição                                       | Tipo    | Required |\n|----------|-------------------------------------------------|---------|----------|\n| name     | Nome do item                                    | String  | true     |\n| done     | Atributo que define se o item está feito ou não | Boolean | false    |"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Itens",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/todos/id_todo/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos",
+								"id_todo",
+								"items"
+							],
+							"query": [
+								{
+									"key": "by_done",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Exibe uma lista com todos os itens para fazer de uma todo do sistema.\n\n| Atributo | Descrição    | Type    |\n|----------|--------------|---------|\n| id       | ID do item   | Integer |\n| name     | Nome do item | String  |"
+					},
+					"response": []
+				},
+				{
+					"name": "Editar item",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Laís Todo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/todos/id_todo/items/id?name=&done=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos",
+								"id_todo",
+								"items",
+								"id"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "done",
+									"value": ""
+								}
+							]
+						},
+						"description": "Esta requisição é responsável por editar um item de uma todo"
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Item",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Laís Todo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/todos/id_todo/items/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos",
+								"id_todo",
+								"items",
+								"id"
+							]
+						},
+						"description": "Esta requisição é responsável por excluir um item de uma todo"
+					},
+					"response": []
+				}
+			],
+			"description": "Está pasta representa um objeto do tipo Item na Doc Api – Todo-list."
+		}
+	]
+}
